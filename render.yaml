@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mechabot
+    env: docker
+    region: oregon
+    plan: free
+    
+    # Build configuration
+    dockerfilePath: ./Dockerfile
+    
+    # Environment variables (optional - add API keys here if needed)
+    envVars:
+      # Add any environment variables your app needs
+      - key: NODE_ENV
+        value: production
+    
+    # Health check
+    healthCheckPath: /
+    
+    # Port configuration
+    # The port specified in your Dockerfile EXPOSE should match here
+    ports:
+      - port: 80
+        protocol: HTTP
