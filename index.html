@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MechaBot - AI Chat Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">🤖 MechaBot</h1>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <span class="btn-icon">+</span> New Chat
+                </button>
+            </div>
+            
+            <div class="model-selector">
+                <label for="modelSelect">AI Model:</label>
+                <select id="modelSelect">
+                    <option value="nvidia/nemotron-nano-12b-v2-vl:free">Nvidia Nemotron Nano</option>
+                    <option value="tngtech/deepseek-r1t2-chimera:free">DeepSeek R1T2</option>
+                    <option value="openai/gpt-oss-20b:free">GPT OSS 20B</option>
+                </select>
+            </div>
+
+            <div class="chat-list" id="chatList">
+                <!-- Chat sessions will be added here dynamically -->
+            </div>
+
+            <div class="sidebar-footer">
+                <p class="info-text"></p>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <h2 id="chatTitle">MechaBot Assistant</h2>
+                <button class="delete-chat-btn" id="deleteChatBtn" style="display: none;">
+                    <span>🗑️</span> Delete Chat
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <h2>Welcome to MechaBot! 🤖</h2>
+                    <p>Your advanced AI assistant powered by multiple cutting-edge models.</p>
+                    <p>Select a model from the sidebar and start chatting!</p>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message here..." 
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
